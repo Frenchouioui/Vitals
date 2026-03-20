@@ -544,7 +544,9 @@ namespace HardwareMonitorWinUI3.Hardware
                         IsMotherboardEnabled = true,
                         IsControllerEnabled = true,
                         IsNetworkEnabled = true,
-                        IsStorageEnabled = true
+                        IsStorageEnabled = true,
+                        IsBatteryEnabled = true,
+                        IsPsuEnabled = true
                     };
 
                     linked.Token.ThrowIfCancellationRequested();
@@ -552,14 +554,7 @@ namespace HardwareMonitorWinUI3.Hardware
                     newComputer.Open();
                     _updateVisitor = new UpdateVisitor();
 
-                    foreach (var hardware in newComputer.Hardware)
-                    {
-                        hardware.Update();
-                        foreach (var subHardware in hardware.SubHardware)
-                        {
-                            subHardware.Update();
-                        }
-                    }
+                    newComputer.Accept(_updateVisitor);
 
                     await _computerLock.WaitAsync(linked.Token).ConfigureAwait(false);
                     try

@@ -213,7 +213,7 @@ namespace HardwareMonitorWinUI3.Views
             if (!_disposed)
             {
                 _disposed = true;
-                ViewModel.BackdropChanged -= OnBackdropChanged;
+                ViewModel?.BackdropChanged -= OnBackdropChanged;
                 ViewModel?.Dispose();
             }
         }

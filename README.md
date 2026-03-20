@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/Frenchouioui/hardwaremonitoringWINUI3/actions/workflows/build.yml/badge.svg)](https://github.com/Frenchouioui/hardwaremonitoringWINUI3/actions/workflows/build.yml)
 [![License](https://img.shields.io/badge/license-MPL--2.0-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows%2011-0078D4.svg)](https://www.microsoft.com/en-us/windows/)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4.svg)](https://www.microsoft.com/en-us/windows/)
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4.svg)](https://dotnet.microsoft.com/download/dotnet/10.0)
 [![WinUI 3](https://img.shields.io/badge/WinUI%203-1.7-0078D4.svg)](https://docs.microsoft.com/windows/apps/winui/winui3/)
 [![NuGet Version](https://img.shields.io/badge/nuget--ver-v0.9.7--pre654-orange)](https://www.nuget.org/packages/LibreHardwareMonitorLib/)
@@ -45,7 +45,7 @@ Get the latest [release](https://github.com/Frenchouioui/hardwaremonitoringWINUI
 
 - **Windows 11** (Windows 10 19041+ supported)
 - **.NET 10.0 Desktop Runtime** - [Download](https://dotnet.microsoft.com/download/dotnet/10.0)
-- **PawnIO Driver** - [Download](https://github.com/namazso/PawnIO.Setup/releases/download/2.0.1/PawnIO_setup.exe)
+- **PawnIO Driver** - [Download](https://github.com/namazso/PawnIO.Setup/releases/latest)
 - **Administrator Rights** - Required for hardware sensor access
 
 ## Architecture
@@ -91,6 +91,11 @@ dotnet build HardwareMonitorWinUI3.csproj -c Release
 1. Verify .NET 10.0 Runtime is installed
 2. Check logs in `%LOCALAPPDATA%\HardwareMonitorWinUI3\Logs`
 3. Run Windows App SDK repair
+
+## Contributing
+
+Issues, bug reports, and pull requests are welcome!  
+Please use the [GitHub Issues](https://github.com/Frenchouioui/hardwaremonitoringWINUI3/issues) tracker.
 
 ## License
 

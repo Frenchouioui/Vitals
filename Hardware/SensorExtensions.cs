@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using LibreHardwareMonitor.Hardware;
 using HardwareMonitorWinUI3.Models;
 
@@ -36,7 +37,7 @@ namespace HardwareMonitorWinUI3.Hardware
 
         static SensorExtensions()
         {
-            var maxType = (int)SensorType.Humidity + 1;
+            var maxType = Enum.GetValues<SensorType>().Cast<int>().Max() + 1;
             SensorUnits = new string[maxType];
             SensorPrecisions = new string[maxType];
             SensorIcons = new string[maxType];

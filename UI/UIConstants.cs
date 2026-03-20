@@ -39,6 +39,9 @@ namespace HardwareMonitorWinUI3.UI
             HardwareCategory.Memory => "\uE9D9",
             HardwareCategory.Network => "\uE968",
             HardwareCategory.Controller => "\uE713",
+            HardwareCategory.Battery => "\uE83E",
+            HardwareCategory.Psu => "\uE945",
+            HardwareCategory.Other => "\uE950",
             _ => "\uE950"
         };
     }

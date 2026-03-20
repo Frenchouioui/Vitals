@@ -23,6 +23,8 @@ public class AppSettingsTests
         Assert.True(settings.ShowMemory);
         Assert.True(settings.ShowNetwork);
         Assert.True(settings.ShowController);
+        Assert.True(settings.ShowBattery);
+        Assert.True(settings.ShowPsu);
     }
 
     [Fact]

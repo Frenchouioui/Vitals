@@ -165,7 +165,7 @@ namespace HardwareMonitorWinUI3.Services
             catch (Exception ex)
             {
                 _logger.LogWarning($"Failed to check screen position: {ex.Message}");
-                return true;
+                return false;
             }
         }
     }
