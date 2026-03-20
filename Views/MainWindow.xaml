@@ -258,7 +258,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                    <Button Style="{StaticResource SpeedButtonStyle}" CornerRadius="8" MinWidth="40" Padding="8,0" ToolTipService.ToolTip="Hardware Display">
+                    <Button Style="{StaticResource SpeedButtonStyle}" CornerRadius="8" MinWidth="40" Padding="8,0" ToolTipService.ToolTip="Filter hardware categories" AutomationProperties.Name="Filter hardware categories">
                         <FontIcon Glyph="&#xE950;" FontSize="18"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="BottomEdgeAlignedRight">
@@ -316,7 +316,8 @@
                             CornerRadius="8"
                             MinWidth="40"
                             Padding="8,0"
-                            ToolTipService.ToolTip="Settings">
+                            ToolTipService.ToolTip="Settings"
+                            AutomationProperties.Name="Application settings">
                         <FontIcon Glyph="&#xE713;" FontSize="18"/>
                         <Button.Flyout>
                             <MenuFlyout Placement="BottomEdgeAlignedRight">
@@ -328,17 +329,20 @@
                                                          IsChecked="{x:Bind ViewModel.IsUltraActive, Mode=OneWay}"
                                                          Command="{x:Bind ViewModel.ChangeSpeedCommand}"
                                                          CommandParameter="250"
-                                                         GroupName="RefreshSpeed"/>
+                                                         GroupName="RefreshSpeed"
+                                                         ToolTipService.ToolTip="Ultra speed: 250ms refresh interval"/>
                                     <RadioMenuFlyoutItem Text="Fast (500ms)"
                                                          IsChecked="{x:Bind ViewModel.IsFastActive, Mode=OneWay}"
                                                          Command="{x:Bind ViewModel.ChangeSpeedCommand}"
                                                          CommandParameter="500"
-                                                         GroupName="RefreshSpeed"/>
+                                                         GroupName="RefreshSpeed"
+                                                         ToolTipService.ToolTip="Fast speed: 500ms refresh interval"/>
                                     <RadioMenuFlyoutItem Text="Normal (1000ms)"
                                                          IsChecked="{x:Bind ViewModel.IsNormalActive, Mode=OneWay}"
                                                          Command="{x:Bind ViewModel.ChangeSpeedCommand}"
                                                          CommandParameter="1000"
-                                                         GroupName="RefreshSpeed"/>
+                                                         GroupName="RefreshSpeed"
+                                                         ToolTipService.ToolTip="Normal speed: 1000ms refresh interval"/>
                                 </MenuFlyoutSubItem>
 
                                 <MenuFlyoutSubItem Text="Backdrop Style">
@@ -347,13 +351,16 @@
                                     </MenuFlyoutSubItem.Icon>
                                     <RadioMenuFlyoutItem Text="Acrylic"
                                                          IsChecked="{x:Bind ViewModel.IsBackdropAcrylic, Mode=TwoWay}"
-                                                         GroupName="Backdrop"/>
+                                                         GroupName="Backdrop"
+                                                         AutomationProperties.Name="Set Acrylic backdrop"/>
                                     <RadioMenuFlyoutItem Text="Mica"
                                                          IsChecked="{x:Bind ViewModel.IsBackdropMica, Mode=TwoWay}"
-                                                         GroupName="Backdrop"/>
+                                                         GroupName="Backdrop"
+                                                         AutomationProperties.Name="Set Mica backdrop"/>
                                     <RadioMenuFlyoutItem Text="Mica Alt"
                                                          IsChecked="{x:Bind ViewModel.IsBackdropMicaAlt, Mode=TwoWay}"
-                                                         GroupName="Backdrop"/>
+                                                         GroupName="Backdrop"
+                                                         AutomationProperties.Name="Set Mica Alt backdrop"/>
                                 </MenuFlyoutSubItem>
 
                                 <MenuFlyoutSubItem Text="View Mode">
@@ -362,10 +369,12 @@
                                     </MenuFlyoutSubItem.Icon>
                                     <RadioMenuFlyoutItem Text="Cards"
                                                          IsChecked="{x:Bind ViewModel.IsCardsView, Mode=TwoWay}"
-                                                         GroupName="ViewMode"/>
+                                                         GroupName="ViewMode"
+                                                         AutomationProperties.Name="Set Cards view mode"/>
                                     <RadioMenuFlyoutItem Text="Tree"
                                                          IsChecked="{x:Bind ViewModel.IsTreeView, Mode=TwoWay}"
-                                                         GroupName="ViewMode"/>
+                                                         GroupName="ViewMode"
+                                                         AutomationProperties.Name="Set Tree view mode"/>
                                 </MenuFlyoutSubItem>
 
                                 <MenuFlyoutSubItem Text="Temperature Unit">
@@ -374,23 +383,27 @@
                                     </MenuFlyoutSubItem.Icon>
                                     <RadioMenuFlyoutItem Text="Celsius (°C)"
                                                          IsChecked="{x:Bind ViewModel.IsCelsiusChecked, Mode=TwoWay}"
-                                                         GroupName="Temperature"/>
+                                                         GroupName="Temperature"
+                                                         AutomationProperties.Name="Set temperature unit to Celsius"/>
                                     <RadioMenuFlyoutItem Text="Fahrenheit (°F)"
                                                          IsChecked="{x:Bind ViewModel.IsFahrenheitChecked, Mode=TwoWay}"
-                                                         GroupName="Temperature"/>
+                                                         GroupName="Temperature"
+                                                         AutomationProperties.Name="Set temperature unit to Fahrenheit"/>
                                 </MenuFlyoutSubItem>
 
                                 <MenuFlyoutSeparator/>
 
                                 <MenuFlyoutItem Text="Reset Min/Max Values"
-                                                Command="{x:Bind ViewModel.ResetMinMaxCommand}">
+                                                Command="{x:Bind ViewModel.ResetMinMaxCommand}"
+                                                AutomationProperties.Name="Reset all minimum and maximum sensor values">
                                     <MenuFlyoutItem.Icon>
                                         <FontIcon Glyph="&#xE845;"/>
                                     </MenuFlyoutItem.Icon>
                                 </MenuFlyoutItem>
 
                                 <MenuFlyoutItem Text="Run Diagnostic"
-                                                Command="{x:Bind ViewModel.RunDiagnosticCommand}">
+                                                Command="{x:Bind ViewModel.RunDiagnosticCommand}"
+                                                AutomationProperties.Name="Run hardware diagnostic">
                                     <MenuFlyoutItem.Icon>
                                         <FontIcon Glyph="&#xE9D9;"/>
                                     </MenuFlyoutItem.Icon>
@@ -651,6 +664,18 @@
             <ItemsControl ItemsSource="{x:Bind ViewModel.HardwareNodes, Mode=OneWay}"
                           ItemTemplate="{StaticResource TreeHardwareNodeTemplate}"/>
         </ScrollViewer>
+
+        <!-- Empty state when all hardware is filtered out -->
+        <TextBlock
+            Text="No hardware displayed. Adjust filters in the toolbar above."
+            Visibility="{Binding ViewModel.IsHardwareListEmpty, ElementName=RootWindow, Converter={StaticResource BoolToVisibilityConverter}}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+            FontSize="14"
+            TextWrapping="Wrap"
+            TextAlignment="Center"
+            Margin="40"/>
         </Grid>
     </Grid>
 </Window>

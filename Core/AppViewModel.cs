@@ -68,6 +68,8 @@ namespace HardwareMonitorWinUI3.Core
         private readonly ObservableCollection<HardwareNode> _filteredHardwareNodes = new();
         public ObservableCollection<HardwareNode> HardwareNodes => _filteredHardwareNodes;
 
+        public bool IsHardwareListEmpty => _filteredHardwareNodes.Count == 0;
+
         private void UpdateFilteredHardwareNodes()
         {
             var currentVersion = Interlocked.Increment(ref _filterUpdateVersion);
@@ -86,6 +88,8 @@ namespace HardwareMonitorWinUI3.Core
 
                 _lastAppliedVersion = currentVersion;
 
+                var wasEmpty = _filteredHardwareNodes.Count == 0;
+
                 if (_filteredHardwareNodes.SequenceEqual(sortedNodes))
                     return;
 
@@ -93,6 +97,11 @@ namespace HardwareMonitorWinUI3.Core
                 foreach (var node in sortedNodes)
                 {
                     _filteredHardwareNodes.Add(node);
+                }
+
+                if (wasEmpty != (_filteredHardwareNodes.Count == 0))
+                {
+                    OnPropertyChanged(nameof(IsHardwareListEmpty));
                 }
             });
         }
@@ -267,7 +276,7 @@ namespace HardwareMonitorWinUI3.Core
 
             if (key.StartsWith("group:"))
             {
-                var groupKey = key.Substring(6);
+                var groupKey = key[6..];
                 var collapsed = settings.CollapsedSensorGroups;
 
                 if (collapsed.Contains(groupKey))

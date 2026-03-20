@@ -15,7 +15,7 @@ namespace HardwareMonitorWinUI3.Shared
         private StreamWriter? _writer;
         private DateTime _currentLogDate;
         private const long MaxLogFileSize = 10 * 1024 * 1024;
-        private bool _disposed;
+        private int _disposedFlag;
         private int _isProcessing;
         private int _writeFailureCount;
         private const int MaxWriteFailures = 5;
@@ -94,7 +94,7 @@ namespace HardwareMonitorWinUI3.Shared
                 shouldRestart = true;
             }
 
-            if (shouldRestart && !_disposed)
+            if (shouldRestart && _disposedFlag == 0)
             {
                 await Task.Delay(1000);
                 Interlocked.Exchange(ref _isProcessing, 0);
@@ -126,8 +126,9 @@ namespace HardwareMonitorWinUI3.Shared
 
         public void Close()
         {
-            _channel.Writer.Complete();
-            
+            if (_disposedFlag != 0) return;
+            _channel.Writer.TryComplete();
+
             lock (_lock)
             {
                 _writer?.Dispose();
@@ -247,8 +248,7 @@ namespace HardwareMonitorWinUI3.Shared
 
         public void Dispose()
         {
-            if (_disposed) return;
-            _disposed = true;
+            if (Interlocked.CompareExchange(ref _disposedFlag, 1, 0) != 0) return;
             Close();
         }
     }
