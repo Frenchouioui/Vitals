@@ -259,24 +259,55 @@
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                     <Button Style="{StaticResource SpeedButtonStyle}" CornerRadius="8" MinWidth="40" Padding="8,0" ToolTipService.ToolTip="Hardware Display">
-                        <StackPanel Orientation="Horizontal" Spacing="6">
-                            <FontIcon Glyph="&#xE950;" FontSize="16"/>
-                        </StackPanel>
+                        <FontIcon Glyph="&#xE950;" FontSize="18"/>
                         <Button.Flyout>
-                            <Flyout Placement="BottomEdgeAlignedRight">
-                                <StackPanel Spacing="12" MinWidth="180">
-                                    <TextBlock Text="Hardware Display" FontSize="14" FontWeight="SemiBold"/>
-                                    <ToggleSwitch Header="Motherboard" IsOn="{x:Bind ViewModel.ShowMotherboard, Mode=TwoWay}"/>
-                                    <ToggleSwitch Header="CPU" IsOn="{x:Bind ViewModel.ShowCPU, Mode=TwoWay}"/>
-                                    <ToggleSwitch Header="Memory" IsOn="{x:Bind ViewModel.ShowMemory, Mode=TwoWay}"/>
-                                    <ToggleSwitch Header="GPU" IsOn="{x:Bind ViewModel.ShowGPU, Mode=TwoWay}"/>
-                                    <ToggleSwitch Header="Storage" IsOn="{x:Bind ViewModel.ShowStorage, Mode=TwoWay}"/>
-                                    <ToggleSwitch Header="Network" IsOn="{x:Bind ViewModel.ShowNetwork, Mode=TwoWay}"/>
-                                    <ToggleSwitch Header="Controller" IsOn="{x:Bind ViewModel.ShowController, Mode=TwoWay}"/>
-                                    <ToggleSwitch Header="Battery" IsOn="{x:Bind ViewModel.ShowBattery, Mode=TwoWay}"/>
-                                    <ToggleSwitch Header="Power Supply" IsOn="{x:Bind ViewModel.ShowPsu, Mode=TwoWay}"/>
-                                </StackPanel>
-                            </Flyout>
+                            <MenuFlyout Placement="BottomEdgeAlignedRight">
+                                <ToggleMenuFlyoutItem Text="Motherboard" IsChecked="{x:Bind ViewModel.ShowMotherboard, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xEDA2;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                                <ToggleMenuFlyoutItem Text="CPU" IsChecked="{x:Bind ViewModel.ShowCPU, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE950;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                                <ToggleMenuFlyoutItem Text="Memory" IsChecked="{x:Bind ViewModel.ShowMemory, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE9D9;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                                <ToggleMenuFlyoutItem Text="GPU" IsChecked="{x:Bind ViewModel.ShowGPU, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE7F4;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                                <ToggleMenuFlyoutItem Text="Storage" IsChecked="{x:Bind ViewModel.ShowStorage, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE88E;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                                <ToggleMenuFlyoutItem Text="Network" IsChecked="{x:Bind ViewModel.ShowNetwork, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE968;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                                <ToggleMenuFlyoutItem Text="Controller" IsChecked="{x:Bind ViewModel.ShowController, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE713;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                                <ToggleMenuFlyoutItem Text="Battery" IsChecked="{x:Bind ViewModel.ShowBattery, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xEBB1;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                                <ToggleMenuFlyoutItem Text="Power Supply" IsChecked="{x:Bind ViewModel.ShowPsu, Mode=TwoWay}">
+                                    <ToggleMenuFlyoutItem.Icon>
+                                        <FontIcon Glyph="&#xE945;"/>
+                                    </ToggleMenuFlyoutItem.Icon>
+                                </ToggleMenuFlyoutItem>
+                            </MenuFlyout>
                         </Button.Flyout>
                     </Button>
 
