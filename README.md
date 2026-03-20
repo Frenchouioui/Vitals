@@ -5,6 +5,7 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%2011-0078D4.svg)](https://www.microsoft.com/en-us/windows/)
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4.svg)](https://dotnet.microsoft.com/download/dotnet/10.0)
 [![WinUI 3](https://img.shields.io/badge/WinUI%203-1.7-0078D4.svg)](https://docs.microsoft.com/windows/apps/winui/winui3/)
+[![NuGet Version](https://img.shields.io/badge/nuget--ver-v0.9.7--pre654-orange)](https://www.nuget.org/packages/LibreHardwareMonitorLib/)
 
 A modern hardware monitoring application built with **WinUI 3** and **.NET 10**, featuring real-time sensor tracking with a clean, native Windows 11 interface.
 
