@@ -1,4 +1,4 @@
-﻿# Vitals
+# Vitals
 
 [![Build](https://github.com/Frenchouioui/vitals/actions/workflows/build.yml/badge.svg)](https://github.com/Frenchouioui/vitals/actions/workflows/build.yml)
 [![License](https://img.shields.io/badge/license-MPL--2.0-blue.svg)](LICENSE)
@@ -51,15 +51,15 @@ Get the latest [release](https://github.com/Frenchouioui/vitals/releases).
 ## Architecture
 
 ```
-ðŸ“ Core/                    â†’ ViewModels and base classes
-ðŸ“ Hardware/                â†’ Hardware monitoring services (LibreHardwareMonitor)
-ðŸ“ Models/                  â†’ Data models (HardwareNode, SensorData, SensorGroup, AppSettings)
-ðŸ“ Services/                â†’ Settings persistence, Window state management
-ðŸ“ UI/                      â†’ Converters, Constants, Extensions
-ðŸ“ Views/                   â†’ MainWindow.xaml
-ðŸ“ Shared/                  â†’ Logger
-ðŸ“ Assets/                  â†’ App icons and images
-ðŸ“ .github/workflows/       â†’ GitHub Actions CI/CD
+📁 Core/                    → ViewModels and base classes
+📁 Hardware/                → Hardware monitoring services (LibreHardwareMonitor)
+📁 Models/                  → Data models (HardwareNode, SensorData, SensorGroup, AppSettings)
+📁 Services/                → Settings persistence, Window state management
+📁 UI/                      → Converters, Constants, Extensions
+📁 Views/                   → MainWindow.xaml
+📁 Shared/                  → Logger
+📁 Assets/                  → App icons and images
+📁 .github/workflows/       → GitHub Actions CI/CD
 ```
 
 ## Development
@@ -108,5 +108,3 @@ Uses [LibreHardwareMonitorLib](https://github.com/LibreHardwareMonitor/LibreHard
 - [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) - Hardware monitoring library
 - [WinUI 3](https://docs.microsoft.com/windows/apps/winui/winui3/) - Native Windows UI framework
 - [PawnIO](https://github.com/namazso/PawnIO) - Kernel driver for hardware access
-
-
