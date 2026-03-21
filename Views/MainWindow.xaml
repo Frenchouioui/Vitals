@@ -5,7 +5,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ui="using:Vitals.UI"
         xmlns:models="using:Vitals.Models"
-        Title="Hardware Monitor WinUI 3">
+        Title="Vitals">
 
     <Grid>
         <Grid.Resources>
@@ -254,7 +254,6 @@
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
                     <FontIcon Glyph="&#xE950;" FontSize="20" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" Margin="0,0,12,0"/>
-                    <TextBlock Text="Hardware Monitor" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">

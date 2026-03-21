@@ -4,7 +4,7 @@ namespace Vitals.UI
 {
     public static class UIConstants
     {
-        public const string ApplicationTitle = "Hardware Monitor WinUI 3";
+        public const string ApplicationTitle = "Vitals";
 
         public const int UltraInterval = 250;
         public const int FastInterval = 500;
