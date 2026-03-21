@@ -1,8 +1,8 @@
-using System.Globalization;
-using HardwareMonitorWinUI3.Models;
+﻿using System.Globalization;
+using Vitals.Models;
 using Xunit;
 
-namespace HardwareMonitorWinUI3.Tests;
+namespace Vitals.Tests;
 
 public class SensorDataTests
 {
@@ -91,21 +91,21 @@ public class SensorDataTests
     {
         var sensor = new SensorData();
 
-        sensor.UpdateMinMax(50.5f, "°C", "F1");
+        sensor.UpdateMinMax(50.5f, "Â°C", "F1");
 
         Assert.StartsWith("Min: 50.5", sensor.MinValue);
         Assert.StartsWith("Max: 50.5", sensor.MaxValue);
-        Assert.EndsWith("°C", sensor.MinValue);
-        Assert.EndsWith("°C", sensor.MaxValue);
+        Assert.EndsWith("Â°C", sensor.MinValue);
+        Assert.EndsWith("Â°C", sensor.MaxValue);
     }
 
     [Fact]
     public void UpdateMinMax_LowerValue_UpdatesMinOnly()
     {
         var sensor = new SensorData();
-        sensor.UpdateMinMax(50f, "°C");
+        sensor.UpdateMinMax(50f, "Â°C");
 
-        sensor.UpdateMinMax(30f, "°C");
+        sensor.UpdateMinMax(30f, "Â°C");
 
         Assert.StartsWith("Min: 30", sensor.MinValue);
         Assert.StartsWith("Max: 50", sensor.MaxValue);
@@ -115,9 +115,9 @@ public class SensorDataTests
     public void UpdateMinMax_HigherValue_UpdatesMaxOnly()
     {
         var sensor = new SensorData();
-        sensor.UpdateMinMax(50f, "°C");
+        sensor.UpdateMinMax(50f, "Â°C");
 
-        sensor.UpdateMinMax(80f, "°C");
+        sensor.UpdateMinMax(80f, "Â°C");
 
         Assert.StartsWith("Min: 50", sensor.MinValue);
         Assert.StartsWith("Max: 80", sensor.MaxValue);
@@ -140,7 +140,7 @@ public class SensorDataTests
     {
         var sensor = new SensorData();
 
-        sensor.UpdateMinMax(-10f, "°C");
+        sensor.UpdateMinMax(-10f, "Â°C");
 
         Assert.StartsWith("Min: -10", sensor.MinValue);
         Assert.StartsWith("Max: -10", sensor.MaxValue);
@@ -159,7 +159,7 @@ public class SensorDataTests
     {
         var sensor = new SensorData();
 
-        Assert.Throws<ArgumentNullException>(() => sensor.UpdateMinMax(50f, "°C", null!));
+        Assert.Throws<ArgumentNullException>(() => sensor.UpdateMinMax(50f, "Â°C", null!));
     }
 
     [Fact]
@@ -181,8 +181,8 @@ public class SensorDataTests
     public void ResetMinMax_ClearsAllValues()
     {
         var sensor = new SensorData();
-        sensor.UpdateMinMax(50f, "°C");
-        sensor.UpdateMinMax(80f, "°C");
+        sensor.UpdateMinMax(50f, "Â°C");
+        sensor.UpdateMinMax(80f, "Â°C");
 
         sensor.ResetMinMax();
 
@@ -219,7 +219,7 @@ public class SensorDataTests
             if (e.PropertyName == nameof(SensorData.Value)) raised = true;
         };
 
-        sensor.Value = "50°C";
+        sensor.Value = "50Â°C";
 
         Assert.True(raised);
     }
@@ -234,7 +234,7 @@ public class SensorDataTests
             if (e.PropertyName == nameof(SensorData.MinValue)) raised = true;
         };
 
-        sensor.UpdateMinMax(50f, "°C");
+        sensor.UpdateMinMax(50f, "Â°C");
 
         Assert.True(raised);
     }
@@ -284,3 +284,4 @@ public class SensorDataTests
 
     #endregion
 }
+

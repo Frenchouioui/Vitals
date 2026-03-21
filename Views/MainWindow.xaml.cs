@@ -1,17 +1,17 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
-using HardwareMonitorWinUI3.Core;
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.Services;
-using HardwareMonitorWinUI3.UI;
-using HardwareMonitorWinUI3.Shared;
+using Vitals.Core;
+using Vitals.Models;
+using Vitals.Services;
+using Vitals.UI;
+using Vitals.Shared;
 
-namespace HardwareMonitorWinUI3.Views
+namespace Vitals.Views
 {
     public sealed partial class MainWindow : Window, IDisposable
     {
@@ -219,3 +219,4 @@ namespace HardwareMonitorWinUI3.Views
         }
     }
 }
+

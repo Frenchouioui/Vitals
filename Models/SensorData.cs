@@ -1,8 +1,8 @@
-using System;
-using HardwareMonitorWinUI3.Core;
-using HardwareMonitorWinUI3.Hardware;
+﻿using System;
+using Vitals.Core;
+using Vitals.Hardware;
 
-namespace HardwareMonitorWinUI3.Models
+namespace Vitals.Models
 {
     public sealed class SensorData : BaseViewModel, ISensorData
     {
@@ -311,3 +311,4 @@ namespace HardwareMonitorWinUI3.Models
         }
     }
 }
+

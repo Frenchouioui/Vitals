@@ -1,7 +1,7 @@
-using HardwareMonitorWinUI3.Models;
+﻿using Vitals.Models;
 using Xunit;
 
-namespace HardwareMonitorWinUI3.Tests;
+namespace Vitals.Tests;
 
 public class SensorGroupTests
 {
@@ -118,3 +118,4 @@ public class SensorGroupTests
 
     #endregion
 }
+

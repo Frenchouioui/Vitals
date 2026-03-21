@@ -1,4 +1,4 @@
-namespace HardwareMonitorWinUI3.Models
+﻿namespace Vitals.Models
 {
     public enum HardwareCategory
     {
@@ -14,3 +14,4 @@ namespace HardwareMonitorWinUI3.Models
         Other = 99
     }
 }
+

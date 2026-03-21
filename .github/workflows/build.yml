@@ -1,4 +1,4 @@
-name: Build and Release
+﻿name: Build and Release
 
 on:
   push:
@@ -35,17 +35,17 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build HardwareMonitorWinUI3.csproj --configuration Release --runtime win-x64 --no-restore
+      run: dotnet build Vitals.csproj --configuration Release --runtime win-x64 --no-restore
 
     # Tests skipped - WinUI 3 requires Windows Desktop runtime not available on CI
     # - name: Run tests
-    #   run: dotnet test HardwareMonitorWinUI3.Tests/HardwareMonitorWinUI3.Tests.csproj --configuration Release --verbosity normal
+    #   run: dotnet test Vitals.Tests/Vitals.Tests.csproj --configuration Release --verbosity normal
 
     - name: Create ZIP artifact
       shell: pwsh
       run: |
         $sourcePath = "bin/Release/net10.0-windows10.0.19041.0/win-x64/"
-        $zipPath = "HardwareMonitorWinUI3.zip"
+        $zipPath = "Vitals.zip"
         Compress-Archive -Path "$sourcePath/*" -DestinationPath $zipPath -Force
         Write-Host "Created ZIP: $(Get-ChildItem $zipPath | Select-Object -ExpandProperty FullName)"
 
@@ -53,13 +53,14 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-artifacts
-        path: HardwareMonitorWinUI3.zip
+        path: Vitals.zip
 
     - name: Create Release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: softprops/action-gh-release@v2
       with:
-        files: HardwareMonitorWinUI3.zip
+        files: Vitals.zip
         generate_release_notes: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

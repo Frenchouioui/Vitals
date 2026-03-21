@@ -1,6 +1,6 @@
-# Hardware Monitor WinUI 3
+﻿# Vitals
 
-[![Build](https://github.com/Frenchouioui/hardwaremonitoringWINUI3/actions/workflows/build.yml/badge.svg)](https://github.com/Frenchouioui/hardwaremonitoringWINUI3/actions/workflows/build.yml)
+[![Build](https://github.com/Frenchouioui/vitals/actions/workflows/build.yml/badge.svg)](https://github.com/Frenchouioui/vitals/actions/workflows/build.yml)
 [![License](https://img.shields.io/badge/license-MPL--2.0-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4.svg)](https://www.microsoft.com/en-us/windows/)
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4.svg)](https://dotnet.microsoft.com/download/dotnet/10.0)
@@ -9,7 +9,7 @@
 
 A modern hardware monitoring application built with **WinUI 3** and **.NET 10**, featuring real-time sensor tracking with a clean, native Windows 11 interface.
 
-![Hardware Monitor Screenshot](Assets/app.gif)
+![Vitals Screenshot](Assets/app.gif)
 
 ## Features
 
@@ -39,7 +39,7 @@ A modern hardware monitoring application built with **WinUI 3** and **.NET 10**,
 
 ## Download
 
-Get the latest [release](https://github.com/Frenchouioui/hardwaremonitoringWINUI3/releases).
+Get the latest [release](https://github.com/Frenchouioui/vitals/releases).
 
 ## Requirements
 
@@ -51,15 +51,15 @@ Get the latest [release](https://github.com/Frenchouioui/hardwaremonitoringWINUI
 ## Architecture
 
 ```
-📁 Core/                    → ViewModels and base classes
-📁 Hardware/                → Hardware monitoring services (LibreHardwareMonitor)
-📁 Models/                  → Data models (HardwareNode, SensorData, SensorGroup, AppSettings)
-📁 Services/                → Settings persistence, Window state management
-📁 UI/                      → Converters, Constants, Extensions
-📁 Views/                   → MainWindow.xaml
-📁 Shared/                  → Logger
-📁 Assets/                  → App icons and images
-📁 .github/workflows/       → GitHub Actions CI/CD
+ðŸ“ Core/                    â†’ ViewModels and base classes
+ðŸ“ Hardware/                â†’ Hardware monitoring services (LibreHardwareMonitor)
+ðŸ“ Models/                  â†’ Data models (HardwareNode, SensorData, SensorGroup, AppSettings)
+ðŸ“ Services/                â†’ Settings persistence, Window state management
+ðŸ“ UI/                      â†’ Converters, Constants, Extensions
+ðŸ“ Views/                   â†’ MainWindow.xaml
+ðŸ“ Shared/                  â†’ Logger
+ðŸ“ Assets/                  â†’ App icons and images
+ðŸ“ .github/workflows/       â†’ GitHub Actions CI/CD
 ```
 
 ## Development
@@ -73,9 +73,9 @@ Get the latest [release](https://github.com/Frenchouioui/hardwaremonitoringWINUI
 ### Build
 
 ```bash
-git clone https://github.com/Frenchouioui/hardwaremonitoringWINUI3.git
-cd hardwaremonitoringWINUI3
-dotnet build HardwareMonitorWinUI3.csproj -c Release
+git clone https://github.com/Frenchouioui/vitals.git
+cd vitals
+dotnet build Vitals.csproj -c Release
 ```
 
 ## Troubleshooting
@@ -89,13 +89,13 @@ dotnet build HardwareMonitorWinUI3.csproj -c Release
 ### Application crashes on startup
 
 1. Verify .NET 10.0 Runtime is installed
-2. Check logs in `%LOCALAPPDATA%\HardwareMonitorWinUI3\Logs`
+2. Check logs in `%LOCALAPPDATA%\Vitals\Logs`
 3. Run Windows App SDK repair
 
 ## Contributing
 
 Issues, bug reports, and pull requests are welcome!  
-Please use the [GitHub Issues](https://github.com/Frenchouioui/hardwaremonitoringWINUI3/issues) tracker.
+Please use the [GitHub Issues](https://github.com/Frenchouioui/vitals/issues) tracker.
 
 ## License
 
@@ -108,3 +108,5 @@ Uses [LibreHardwareMonitorLib](https://github.com/LibreHardwareMonitor/LibreHard
 - [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) - Hardware monitoring library
 - [WinUI 3](https://docs.microsoft.com/windows/apps/winui/winui3/) - Native Windows UI framework
 - [PawnIO](https://github.com/namazso/PawnIO) - Kernel driver for hardware access
+
+

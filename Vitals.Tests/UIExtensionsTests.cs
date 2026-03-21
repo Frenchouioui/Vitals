@@ -1,10 +1,10 @@
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.Hardware;
-using HardwareMonitorWinUI3.UI;
+﻿using Vitals.Models;
+using Vitals.Hardware;
+using Vitals.UI;
 using LibreHardwareMonitor.Hardware;
 using Xunit;
 
-namespace HardwareMonitorWinUI3.Tests;
+namespace Vitals.Tests;
 
 public class UIExtensionsTests
 {
@@ -13,7 +13,7 @@ public class UIExtensionsTests
     {
         var unit = SensorType.Temperature.GetSensorUnit();
 
-        Assert.Equal("°C", unit);
+        Assert.Equal("Â°C", unit);
     }
 
     [Fact]
@@ -129,7 +129,7 @@ public class UIExtensionsTests
     }
 
     [Theory]
-    [InlineData(SensorType.Temperature, "°C", "F1")]
+    [InlineData(SensorType.Temperature, "Â°C", "F1")]
     [InlineData(SensorType.Voltage, "V", "F3")]
     [InlineData(SensorType.Clock, "MHz", "F0")]
     [InlineData(SensorType.Load, "%", "F1")]
@@ -143,3 +143,4 @@ public class UIExtensionsTests
         Assert.Equal(expectedPrecision, type.GetSensorPrecision());
     }
 }
+

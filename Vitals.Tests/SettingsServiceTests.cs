@@ -1,9 +1,9 @@
-using System.IO;
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.Services;
+﻿using System.IO;
+using Vitals.Models;
+using Vitals.Services;
 using Xunit;
 
-namespace HardwareMonitorWinUI3.Tests;
+namespace Vitals.Tests;
 
 public class SettingsServiceTests
 {
@@ -64,3 +64,4 @@ public class SettingsServiceTests
         Assert.Equal(expected, validValue);
     }
 }
+

@@ -1,10 +1,10 @@
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Media;
 using System;
-using HardwareMonitorWinUI3.Models;
+using Vitals.Models;
 
-namespace HardwareMonitorWinUI3.UI
+namespace Vitals.UI
 {
     public class BoolToVisibilityConverter : IValueConverter
     {
@@ -135,3 +135,4 @@ namespace HardwareMonitorWinUI3.UI
         }
     }
 }
+

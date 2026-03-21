@@ -1,8 +1,8 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using HardwareMonitorWinUI3.Core;
+using Vitals.Core;
 
-namespace HardwareMonitorWinUI3.Models
+namespace Vitals.Models
 {
     public class SensorGroup : BaseViewModel
     {
@@ -69,3 +69,4 @@ namespace HardwareMonitorWinUI3.Models
         }
     }
 }
+

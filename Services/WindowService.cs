@@ -1,11 +1,11 @@
-using System;
-using HardwareMonitorWinUI3.Shared;
+﻿using System;
+using Vitals.Shared;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Windows.Graphics;
 using WinRT.Interop;
 
-namespace HardwareMonitorWinUI3.Services
+namespace Vitals.Services
 {
     public class WindowService : IWindowService
     {
@@ -170,3 +170,4 @@ namespace HardwareMonitorWinUI3.Services
         }
     }
 }
+

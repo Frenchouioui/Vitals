@@ -1,6 +1,6 @@
-using LibreHardwareMonitor.Hardware;
+﻿using LibreHardwareMonitor.Hardware;
 
-namespace HardwareMonitorWinUI3.Models
+namespace Vitals.Models
 {
     public class UpdateVisitor : IVisitor
     {

@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Text;
 using LibreHardwareMonitor.Hardware;
-using HardwareMonitorWinUI3.Hardware;
-using HardwareMonitorWinUI3.Shared;
+using Vitals.Hardware;
+using Vitals.Shared;
 
-namespace HardwareMonitorWinUI3.Hardware
+namespace Vitals.Hardware
 {
     public static class DiagnosticHelper
     {
@@ -180,3 +180,4 @@ namespace HardwareMonitorWinUI3.Hardware
         }
     }
 }
+

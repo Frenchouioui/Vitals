@@ -1,12 +1,12 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using HardwareMonitorWinUI3.Core;
-using HardwareMonitorWinUI3.UI;
+using Vitals.Core;
+using Vitals.UI;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace HardwareMonitorWinUI3.Models
+namespace Vitals.Models
 {
     public class HardwareNode : BaseViewModel
     {
@@ -190,3 +190,4 @@ namespace HardwareMonitorWinUI3.Models
         }
     }
 }
+

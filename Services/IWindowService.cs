@@ -1,6 +1,6 @@
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 
-namespace HardwareMonitorWinUI3.Services
+namespace Vitals.Services
 {
     public interface IWindowService
     {
@@ -9,3 +9,4 @@ namespace HardwareMonitorWinUI3.Services
         void CenterWindow(Window window);
     }
 }
+

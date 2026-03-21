@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 
-namespace HardwareMonitorWinUI3.Shared
+namespace Vitals.Shared
 {
     public interface ILogger
     {
@@ -12,3 +12,4 @@ namespace HardwareMonitorWinUI3.Shared
         void Close();
     }
 }
+

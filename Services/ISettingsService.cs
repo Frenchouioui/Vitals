@@ -1,6 +1,6 @@
-using HardwareMonitorWinUI3.Models;
+﻿using Vitals.Models;
 
-namespace HardwareMonitorWinUI3.Services
+namespace Vitals.Services
 {
     public interface ISettingsService
     {
@@ -10,3 +10,4 @@ namespace HardwareMonitorWinUI3.Services
         void Reset();
     }
 }
+

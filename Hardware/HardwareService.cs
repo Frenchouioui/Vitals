@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using LibreHardwareMonitor.Hardware;
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.Shared;
-using HardwareMonitorWinUI3.UI;
+using Vitals.Models;
+using Vitals.Shared;
+using Vitals.UI;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 
-namespace HardwareMonitorWinUI3.Hardware
+namespace Vitals.Hardware
 {
     public class HardwareService : IHardwareService
     {
@@ -675,3 +675,4 @@ namespace HardwareMonitorWinUI3.Hardware
         #endregion
     }
 }
+

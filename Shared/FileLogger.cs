@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace HardwareMonitorWinUI3.Shared
+namespace Vitals.Shared
 {
     public sealed class FileLogger : ILogger, IDisposable
     {
@@ -30,7 +30,7 @@ namespace HardwareMonitorWinUI3.Shared
         {
             _logDirectory = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                "HardwareMonitorWinUI3", "Logs");
+                "Vitals", "Logs");
 
             try
             {
@@ -253,3 +253,4 @@ namespace HardwareMonitorWinUI3.Shared
         }
     }
 }
+

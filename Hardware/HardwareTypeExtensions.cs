@@ -1,7 +1,7 @@
-using LibreHardwareMonitor.Hardware;
-using HardwareMonitorWinUI3.Models;
+﻿using LibreHardwareMonitor.Hardware;
+using Vitals.Models;
 
-namespace HardwareMonitorWinUI3.Hardware
+namespace Vitals.Hardware
 {
     internal static class HardwareTypeExtensions
     {
@@ -20,3 +20,4 @@ namespace HardwareMonitorWinUI3.Hardware
         };
     }
 }
+

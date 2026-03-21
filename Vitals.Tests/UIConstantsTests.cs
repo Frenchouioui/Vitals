@@ -1,9 +1,9 @@
-using System;
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.UI;
+﻿using System;
+using Vitals.Models;
+using Vitals.UI;
 using Xunit;
 
-namespace HardwareMonitorWinUI3.Tests;
+namespace Vitals.Tests;
 
 public class UIConstantsTests
 {
@@ -75,3 +75,4 @@ public class UIConstantsTests
         Assert.True(UIConstants.FastInterval < UIConstants.NormalInterval);
     }
 }
+

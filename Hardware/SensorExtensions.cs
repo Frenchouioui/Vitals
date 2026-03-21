@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using LibreHardwareMonitor.Hardware;
-using HardwareMonitorWinUI3.Models;
+using Vitals.Models;
 
-namespace HardwareMonitorWinUI3.Hardware
+namespace Vitals.Hardware
 {
     public static class SensorExtensions
     {
@@ -265,3 +265,4 @@ namespace HardwareMonitorWinUI3.Hardware
         }
     }
 }
+

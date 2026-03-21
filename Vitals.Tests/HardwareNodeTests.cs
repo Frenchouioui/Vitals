@@ -1,7 +1,7 @@
-using HardwareMonitorWinUI3.Models;
+﻿using Vitals.Models;
 using Xunit;
 
-namespace HardwareMonitorWinUI3.Tests;
+namespace Vitals.Tests;
 
 public class HardwareNodeTests
 {
@@ -243,3 +243,4 @@ public class HardwareNodeTests
 
     #endregion
 }
+

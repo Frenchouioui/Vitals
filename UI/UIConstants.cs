@@ -1,6 +1,6 @@
-using HardwareMonitorWinUI3.Models;
+﻿using Vitals.Models;
 
-namespace HardwareMonitorWinUI3.UI
+namespace Vitals.UI
 {
     public static class UIConstants
     {
@@ -46,3 +46,4 @@ namespace HardwareMonitorWinUI3.UI
         };
     }
 }
+

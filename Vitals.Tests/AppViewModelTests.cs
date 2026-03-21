@@ -1,14 +1,14 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Moq;
-using HardwareMonitorWinUI3.Core;
-using HardwareMonitorWinUI3.Hardware;
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.Services;
-using HardwareMonitorWinUI3.Shared;
-using HardwareMonitorWinUI3.UI;
+using Vitals.Core;
+using Vitals.Hardware;
+using Vitals.Models;
+using Vitals.Services;
+using Vitals.Shared;
+using Vitals.UI;
 
-namespace HardwareMonitorWinUI3.Tests;
+namespace Vitals.Tests;
 
 public class AppViewModelTests
 {
@@ -91,9 +91,9 @@ public class AppViewModelTests
     [Fact]
     public void ResetAllMinMax_ResetsAllSensors()
     {
-        var sensor1 = new SensorData { Value = "50.0°C" };
-        sensor1.UpdateMinMax(30f, "°C");
-        sensor1.UpdateMinMax(80f, "°C");
+        var sensor1 = new SensorData { Value = "50.0Â°C" };
+        sensor1.UpdateMinMax(30f, "Â°C");
+        sensor1.UpdateMinMax(80f, "Â°C");
 
         var sensor2 = new SensorData { Value = "1200MHz" };
         sensor2.UpdateMinMax(800f, "MHz", "F0");
@@ -115,8 +115,8 @@ public class AppViewModelTests
     [Fact]
     public void ResetAllMinMax_ResetsSubHardwareSensors()
     {
-        var subSensor = new SensorData { Value = "45.0°C" };
-        subSensor.UpdateMinMax(20f, "°C");
+        var subSensor = new SensorData { Value = "45.0Â°C" };
+        subSensor.UpdateMinMax(20f, "Â°C");
 
         var subNode = new HardwareNode { Name = "Sub", Category = HardwareCategory.Motherboard };
         subNode.Sensors.Add(subSensor);
@@ -246,9 +246,9 @@ public class AppViewModelTests
     [Fact]
     public void SetBackdropIndicator_UpdatesProperty()
     {
-        _viewModel.SetBackdropIndicator("• Acrylic");
+        _viewModel.SetBackdropIndicator("â€¢ Acrylic");
 
-        Assert.Equal("• Acrylic", _viewModel.BackdropIndicator);
+        Assert.Equal("â€¢ Acrylic", _viewModel.BackdropIndicator);
     }
 
     [Fact]
@@ -272,3 +272,4 @@ public class AppViewModelTests
 
     #endregion
 }
+

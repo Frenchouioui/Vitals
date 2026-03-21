@@ -1,14 +1,14 @@
-using System;
+﻿using System;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Dispatching;
 using Microsoft.Extensions.DependencyInjection;
-using HardwareMonitorWinUI3.Views;
-using HardwareMonitorWinUI3.Hardware;
-using HardwareMonitorWinUI3.Core;
-using HardwareMonitorWinUI3.Services;
-using HardwareMonitorWinUI3.Shared;
+using Vitals.Views;
+using Vitals.Hardware;
+using Vitals.Core;
+using Vitals.Services;
+using Vitals.Shared;
 
-namespace HardwareMonitorWinUI3
+namespace Vitals
 {
     public partial class App : Application
     {
@@ -106,3 +106,4 @@ namespace HardwareMonitorWinUI3
         }
     }
 }
+

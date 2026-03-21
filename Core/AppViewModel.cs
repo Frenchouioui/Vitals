@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
@@ -7,13 +7,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.Hardware;
-using HardwareMonitorWinUI3.Services;
-using HardwareMonitorWinUI3.Shared;
-using HardwareMonitorWinUI3.UI;
+using Vitals.Models;
+using Vitals.Hardware;
+using Vitals.Services;
+using Vitals.Shared;
+using Vitals.UI;
 
-namespace HardwareMonitorWinUI3.Core
+namespace Vitals.Core
 {
     public sealed class AppViewModel : BaseViewModel
     {
@@ -842,3 +842,4 @@ namespace HardwareMonitorWinUI3.Core
         #endregion
     }
 }
+

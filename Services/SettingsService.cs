@@ -1,18 +1,18 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.Shared;
+using Vitals.Models;
+using Vitals.Shared;
 
-namespace HardwareMonitorWinUI3.Services
+namespace Vitals.Services
 {
     public sealed class SettingsService : ISettingsService, IDisposable
     {
         private static readonly string SettingsDirectory = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            "HardwareMonitorWinUI3");
+            "Vitals");
 
         private static readonly string SettingsFilePath = Path.Combine(SettingsDirectory, "settings.json");
         private static readonly string BackupFilePath = Path.Combine(SettingsDirectory, "settings.json.bak");
@@ -205,3 +205,4 @@ namespace HardwareMonitorWinUI3.Services
         }
     }
 }
+

@@ -1,4 +1,4 @@
-namespace HardwareMonitorWinUI3.Models
+﻿namespace Vitals.Models
 {
     public enum ViewMode
     {
@@ -6,3 +6,4 @@ namespace HardwareMonitorWinUI3.Models
         Tree = 1
     }
 }
+

@@ -1,14 +1,14 @@
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Windowing;
 using WinRT.Interop;
-using HardwareMonitorWinUI3.Models;
-using HardwareMonitorWinUI3.Shared;
+using Vitals.Models;
+using Vitals.Shared;
 using System;
 
-namespace HardwareMonitorWinUI3.UI
+namespace Vitals.UI
 {
     public static class UIExtensions
     {
@@ -105,3 +105,4 @@ namespace HardwareMonitorWinUI3.UI
         #endregion
     }
 }
+

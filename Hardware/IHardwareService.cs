@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
-using HardwareMonitorWinUI3.Models;
+using Vitals.Models;
 
-namespace HardwareMonitorWinUI3.Hardware
+namespace Vitals.Hardware
 {
     public interface IHardwareService : IDisposable
     {
@@ -31,3 +31,4 @@ namespace HardwareMonitorWinUI3.Hardware
         void ChangeInterval(int newInterval);
     }
 }
+

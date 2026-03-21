@@ -1,4 +1,4 @@
-namespace HardwareMonitorWinUI3.Models
+﻿namespace Vitals.Models
 {
     /// <summary>
     /// Represents sensor data with value tracking and min/max statistics.
@@ -59,3 +59,4 @@ namespace HardwareMonitorWinUI3.Models
         void ResetMinMax();
     }
 }
+

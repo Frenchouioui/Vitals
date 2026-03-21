@@ -1,8 +1,8 @@
-using System.Threading;
+﻿using System.Threading;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace HardwareMonitorWinUI3.Models
+namespace Vitals.Models
 {
     public enum BackdropStyle
     {
@@ -206,3 +206,4 @@ namespace HardwareMonitorWinUI3.Models
         }
     }
 }
+

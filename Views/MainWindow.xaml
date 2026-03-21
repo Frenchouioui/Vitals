@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Window x:Class="HardwareMonitorWinUI3.Views.MainWindow"
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="Vitals.Views.MainWindow"
         x:Name="RootWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ui="using:HardwareMonitorWinUI3.UI"
-        xmlns:models="using:HardwareMonitorWinUI3.Models"
+        xmlns:ui="using:Vitals.UI"
+        xmlns:models="using:Vitals.Models"
         Title="Hardware Monitor WinUI 3">
 
     <Grid>
@@ -381,11 +381,11 @@
                                     <MenuFlyoutSubItem.Icon>
                                         <FontIcon Glyph="&#xE9CA;"/>
                                     </MenuFlyoutSubItem.Icon>
-                                    <RadioMenuFlyoutItem Text="Celsius (°C)"
+                                    <RadioMenuFlyoutItem Text="Celsius (Â°C)"
                                                          IsChecked="{x:Bind ViewModel.IsCelsiusChecked, Mode=TwoWay}"
                                                          GroupName="Temperature"
                                                          AutomationProperties.Name="Set temperature unit to Celsius"/>
-                                    <RadioMenuFlyoutItem Text="Fahrenheit (°F)"
+                                    <RadioMenuFlyoutItem Text="Fahrenheit (Â°F)"
                                                          IsChecked="{x:Bind ViewModel.IsFahrenheitChecked, Mode=TwoWay}"
                                                          GroupName="Temperature"
                                                          AutomationProperties.Name="Set temperature unit to Fahrenheit"/>
@@ -679,3 +679,4 @@
         </Grid>
     </Grid>
 </Window>
+

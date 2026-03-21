@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace HardwareMonitorWinUI3.Core
+namespace Vitals.Core
 {
     public abstract class BaseViewModel : ObservableObject, IDisposable
     {
