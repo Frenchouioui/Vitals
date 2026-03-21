@@ -5,6 +5,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Shapes;
 using Vitals.Core;
 using Vitals.Models;
 using Vitals.Services;
@@ -81,6 +82,57 @@ namespace Vitals.Views
         }
 
         #region Event Handlers
+
+        public void StatusDot_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is Ellipse dot)
+            {
+                var storyboard = new Microsoft.UI.Xaml.Media.Animation.Storyboard();
+
+                var opacityAnim = new Microsoft.UI.Xaml.Media.Animation.DoubleAnimation
+                {
+                    From = 1.0,
+                    To = 0.4,
+                    Duration = new Duration(TimeSpan.FromSeconds(1.2)),
+                    AutoReverse = true,
+                    RepeatBehavior = Microsoft.UI.Xaml.Media.Animation.RepeatBehavior.Forever
+                };
+                Microsoft.UI.Xaml.Media.Animation.Storyboard.SetTarget(opacityAnim, dot);
+                Microsoft.UI.Xaml.Media.Animation.Storyboard.SetTargetProperty(opacityAnim, "Opacity");
+
+                var scaleTransform = dot.RenderTransform as ScaleTransform;
+                if (scaleTransform != null)
+                {
+                    var scaleXAnim = new Microsoft.UI.Xaml.Media.Animation.DoubleAnimation
+                    {
+                        From = 1.0,
+                        To = 1.2,
+                        Duration = new Duration(TimeSpan.FromSeconds(1.2)),
+                        AutoReverse = true,
+                        RepeatBehavior = Microsoft.UI.Xaml.Media.Animation.RepeatBehavior.Forever
+                    };
+                    Microsoft.UI.Xaml.Media.Animation.Storyboard.SetTarget(scaleXAnim, scaleTransform);
+                    Microsoft.UI.Xaml.Media.Animation.Storyboard.SetTargetProperty(scaleXAnim, "ScaleX");
+
+                    var scaleYAnim = new Microsoft.UI.Xaml.Media.Animation.DoubleAnimation
+                    {
+                        From = 1.0,
+                        To = 1.2,
+                        Duration = new Duration(TimeSpan.FromSeconds(1.2)),
+                        AutoReverse = true,
+                        RepeatBehavior = Microsoft.UI.Xaml.Media.Animation.RepeatBehavior.Forever
+                    };
+                    Microsoft.UI.Xaml.Media.Animation.Storyboard.SetTarget(scaleYAnim, scaleTransform);
+                    Microsoft.UI.Xaml.Media.Animation.Storyboard.SetTargetProperty(scaleYAnim, "ScaleY");
+
+                    storyboard.Children.Add(scaleXAnim);
+                    storyboard.Children.Add(scaleYAnim);
+                }
+
+                storyboard.Children.Add(opacityAnim);
+                storyboard.Begin();
+            }
+        }
 
         private void ToggleExpand_Click(object sender, RoutedEventArgs e)
         {

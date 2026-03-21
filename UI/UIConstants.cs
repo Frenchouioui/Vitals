@@ -13,9 +13,9 @@ namespace Vitals.UI
         public static string GetInitializationMessage() => "\U0001f527 Initializing hardware monitoring...";
         public static string GetBuildingInterfaceMessage() => "\U0001f3d7\ufe0f Building interface...";
         public static string GetActiveMonitoringMessage(int totalHardware, int storageCount) =>
-            $"\u2705 Monitoring active - Hardware detected: {totalHardware} ({storageCount} storage devices)";
-        public static string GetActiveMonitoringSimpleMessage() => "\u2705 Monitoring active - Hardware initialized";
-        public static string GetErrorMessage(string error) => $"\u274c Error: {error}";
+            $"Monitoring active - Hardware detected: {totalHardware} ({storageCount} storage devices)";
+        public static string GetActiveMonitoringSimpleMessage() => "Monitoring active - Hardware initialized";
+        public static string GetErrorMessage(string error) => $"Error: {error}";
         public static string GetDiagnosticMessage() => "\U0001f527 Running hardware diagnostic...";
         public static string GetDiagnosticErrorMessage(string error) => $"\u274c Diagnostic error: {error}";
 
